@@ -1,15 +1,14 @@
 spring:
   datasource:
-    url: jdbc:h2:file:./database
-    username: sa
-    password: password
-    driverClassName: org.h2.Driver
+    url: jdbc:postgresql://docker-postgres:5432/todo
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update
-  profiles:
-    active: homol
+      ddl-auto: create
 
 
 server:
